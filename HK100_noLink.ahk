@@ -673,7 +673,8 @@ whr.Send()
 whr.WaitForResponse()
 hseSpeedList := ""
 hseSpeedList := whr.ResponseText
-; msgbox % hseSpeedList
+; msgbox,,hseSpeedList, % hseSpeedList
+
 ;=================================================================================================================================== get jersey
 
 RegExMatch(url_venue, "s)<div class=""race-table"">(.*)<table class=""remarks"">", data2)
@@ -728,7 +729,7 @@ loop, %total_hs_number%
       if (field3_hsenum != "")
          {
          ; msgbox % list_1 "`r" list_2
-      ; msgbox,,, %list_% `n %list_1%   %list_2%   %list_3%   %list_4%                             ;........................change list_2 to list_3
+         ; msgbox,,list_, %list_% `n %list_1%   %list_2%   %list_3%   %list_4%                             ;........................change list_2 to list_3
          GuiControl, %guiId%:, %field5_br%callerBox, %list_4% 
          GuiControl, %guiId%:, %field5_br%speedbox, %list_3%
          if (list_3 = "L1")
